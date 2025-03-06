@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.gettask" "\0"
-            VALUE "FileDescription", "get_task" "\0"
+            VALUE "CompanyName", "com.rihan" "\0"
+            VALUE "FileDescription", "rihan" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "get_task" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 com.gettask. All rights reserved." "\0"
-            VALUE "OriginalFilename", "get_task.exe" "\0"
-            VALUE "ProductName", "get_task" "\0"
+            VALUE "InternalName", "rihan" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 com.rihan. All rights reserved." "\0"
+            VALUE "OriginalFilename", "rihan.exe" "\0"
+            VALUE "ProductName", "rihan" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

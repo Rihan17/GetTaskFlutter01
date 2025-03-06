@@ -1,11 +1,11 @@
 {
-    "name": "get_task",
-    "short_name": "get_task",
+    "name": "rihan",
+    "short_name": "rihan",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Tcc",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

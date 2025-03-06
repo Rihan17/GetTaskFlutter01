@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = get_task
+PRODUCT_NAME = rihan
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.gettask.getTask
+PRODUCT_BUNDLE_IDENTIFIER = com.rihan.rihan
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2025 com.gettask. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2025 com.rihan. All rights reserved.
