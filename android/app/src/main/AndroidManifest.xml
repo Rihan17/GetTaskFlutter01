@@ -2,7 +2,7 @@
     <application
         android:label="rihan"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/logo_gettask">
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -41,13 +41,13 @@ class BodyContent extends StatelessWidget {
                 SizedBox(height: 10),
                 Vaga(),
                 SizedBox(height: 10),
-                Vaga2(),
+                Vaga(),
                 SizedBox(height: 10),
                 TextVagasAceitas(),
                 SizedBox(height: 10),
                 VagaAceita(),
                 SizedBox(height: 10),
-                CadVaga()
+                CadVaga(),
               ],
             ),
           ),
@@ -193,17 +193,17 @@ class TextVagasDisponiveis extends StatelessWidget {
     return Row(
       children: [
         Container(
-          margin: const EdgeInsets.fromLTRB(20,10,0,0),
+          margin: const EdgeInsets.fromLTRB(20, 10, 0, 0),
           child: Text(
             'Vagas Disponíveis',
             style: TextStyle(
-                color: Colors.black,
-                fontSize: 24,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w600
+              color: Colors.black,
+              fontSize: 24,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w600,
             ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -215,7 +215,7 @@ class Vaga extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(10,0,10,0),
+      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: ElevatedButton(
         onPressed: () => _dialogBuilder(context),
         style: ElevatedButton.styleFrom(
@@ -261,11 +261,7 @@ class Vaga extends StatelessWidget {
               Positioned(
                 top: 10,
                 right: 260,
-                child: Image.asset(
-                  'images/image.png',
-                  width: 40,
-                  height: 40,
-                ),
+                child: Image.asset('images/image.png', width: 40, height: 40),
               ),
               Positioned(
                 top: 10,
@@ -301,25 +297,35 @@ Future<void> _dialogBuilder(BuildContext context) {
         content: const Text(
           'Endereço:\n'
           '\n'
-              'Peso:\n'
+          'Peso:\n'
           '\n'
-              'Itens:\n'
+          'Itens:\n'
           '\n'
-              'Valor:\n'
+          'Valor:\n'
           '\n'
-              'Entregar até :',
+          'Entregar até :',
         ),
         actions: <Widget>[
           TextButton(
-            style: TextButton.styleFrom(textStyle: Theme.of(context).textTheme.labelLarge),
-            child: const Text('Aceitar', style: TextStyle(color: Color(0xFFDD7514)),),
+            style: TextButton.styleFrom(
+              textStyle: Theme.of(context).textTheme.labelLarge,
+            ),
+            child: const Text(
+              'Aceitar',
+              style: TextStyle(color: Color(0xFFDD7514)),
+            ),
             onPressed: () {
               Navigator.of(context).pop();
             },
           ),
           TextButton(
-            style: TextButton.styleFrom(textStyle: Theme.of(context).textTheme.labelLarge),
-            child: const Text('Voltar', style: TextStyle(color: Color(0xFFDD7514))),
+            style: TextButton.styleFrom(
+              textStyle: Theme.of(context).textTheme.labelLarge,
+            ),
+            child: const Text(
+              'Voltar',
+              style: TextStyle(color: Color(0xFFDD7514)),
+            ),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -329,128 +335,6 @@ Future<void> _dialogBuilder(BuildContext context) {
     },
   );
 }
-
-class Vaga2 extends StatelessWidget {
-  const Vaga2({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.fromLTRB(10,0,10,0),
-      child: ElevatedButton(
-        onPressed: () => _dialogBuilder2(context),
-        style: ElevatedButton.styleFrom(
-          elevation: 5,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-            side: BorderSide(color: Color(0xFFDD7514), width: 2),
-          ),
-        ),
-        child: Container(
-          width: 350,
-          height: 100,
-          child: Stack(
-            children: [
-              Positioned(
-                top: 30,
-                left: 70,
-                child: Text(
-                  'Santos - Canal 4',
-                  style: TextStyle(
-                    color: Color(0xff000000).withOpacity(0.47),
-                    fontSize: 13,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 70,
-                left: 20,
-                child: Text(
-                  'Destino: São Paulo',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 13,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 10,
-                right: 260,
-                child: Image.asset(
-                  'images/image.png',
-                  width: 40,
-                  height: 40,
-                ),
-              ),
-              Positioned(
-                top: 10,
-                left: 30,
-                right: 10,
-                child: Center(
-                  child: const Text(
-                    'Levar uma Encomenda a São Paulo',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 13,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w700,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-Future<void> _dialogBuilder2(BuildContext context) {
-  return showDialog<void>(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text('Detalhes da Vaga'),
-        content: const Text(
-          'Endereço:\n'
-              '\n'
-              'Peso:\n'
-              '\n'
-              'Itens:\n'
-              '\n'
-              'Valor:\n'
-              '\n'
-              'Entregar até :',
-        ),
-        actions: <Widget>[
-          TextButton(
-            style: TextButton.styleFrom(textStyle: Theme.of(context).textTheme.labelLarge),
-            child: const Text('Aceitar', style: TextStyle(color: Color(0xFFDD7514)),),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          TextButton(
-            style: TextButton.styleFrom(textStyle: Theme.of(context).textTheme.labelLarge),
-            child: const Text('Voltar', style: TextStyle(color: Color(0xFFDD7514))),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      );
-    },
-  );
-}
-
 
 class GoogleBottomBar extends StatefulWidget {
   const GoogleBottomBar({Key? key}) : super(key: key);
@@ -462,37 +346,82 @@ class GoogleBottomBar extends StatefulWidget {
 class _GoogleBottomBarState extends State<GoogleBottomBar> {
   int _selectedIndex = 0;
 
+  final List<Widget> _pages = [HomePage(),VagasPage(),ConfigPage()];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SalomonBottomBar(
-      currentIndex: _selectedIndex,
-      selectedItemColor: const Color(0xff6200ee),
-      unselectedItemColor: const Color(0xff757575),
-      onTap: (index) {
-        setState(() {
-          _selectedIndex = index;
-        });
-      },
-      items: _navBarItems,
+    return Scaffold(
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: SalomonBottomBar(
+        currentIndex: _selectedIndex,
+        selectedItemColor: const Color(0xFFDD7514),
+        unselectedItemColor: const Color(0xff757575),
+        onTap: _onItemTapped,
+        items: _navBarItems,
+      ),
     );
   }
 }
 
-final _navBarItems = [
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CabecalhoPersonalizado(),
+        SizedBox(height: 20),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                TaskPlus(),
+                SizedBox(height: 10),
+                TextVagasDisponiveis(),
+                SizedBox(height: 10),
+                Vaga(),
+                SizedBox(height: 10),
+                Vaga(),
+                SizedBox(height: 10),
+                TextVagasAceitas(),
+                SizedBox(height: 10),
+                VagaAceita(),
+                SizedBox(height: 10),
+                CadVaga(),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ConfigPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Text('OI');
+  }
+}
+
+class VagasPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [ConteudoCabecalhoVagas(),TituloVagas()]);
+  }
+}
+
+final List<SalomonBottomBarItem> _navBarItems = [
+  SalomonBottomBarItem(icon: Icon(Icons.home), title: Text('Home')),
+  SalomonBottomBarItem(icon: Icon(Icons.work), title: Text('Vagas')),
   SalomonBottomBarItem(
-    icon: const Icon(Icons.home),
-    title: const Text("Home"),
-    selectedColor: Colors.orange,
-  ),
-  SalomonBottomBarItem(
-    icon: const Icon(Icons.work),
-    title: const Text("Vagas"),
-    selectedColor: Colors.orange,
-  ),
-  SalomonBottomBarItem(
-    icon: const Icon(Icons.settings),
-    title: const Text("Configurações"),
-    selectedColor: Colors.teal,
+    icon: Icon(Icons.settings),
+    title: Text('Configurações'),
   ),
 ];
 
@@ -504,17 +433,17 @@ class TextVagasAceitas extends StatelessWidget {
     return Row(
       children: [
         Container(
-          margin: const EdgeInsets.fromLTRB(20,10,0,0),
+          margin: const EdgeInsets.fromLTRB(20, 10, 0, 0),
           child: Text(
             'Vagas Aceitas',
             style: TextStyle(
-                color: Colors.black,
-                fontSize: 24,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w600
+              color: Colors.black,
+              fontSize: 24,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w600,
             ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -526,7 +455,7 @@ class VagaAceita extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(10,0,10,0),
+      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: ElevatedButton(
         onPressed: () => _dialogBuilder3(context),
         style: ElevatedButton.styleFrom(
@@ -572,11 +501,7 @@ class VagaAceita extends StatelessWidget {
               Positioned(
                 top: 10,
                 right: 260,
-                child: Image.asset(
-                  'images/image.png',
-                  width: 40,
-                  height: 40,
-                ),
+                child: Image.asset('images/image.png', width: 40, height: 40),
               ),
               Positioned(
                 top: 10,
@@ -611,19 +536,24 @@ Future<void> _dialogBuilder3(BuildContext context) {
         title: const Text('Detalhes da Vaga'),
         content: const Text(
           'Endereço:\n'
-              '\n'
-              'Peso:\n'
-              '\n'
-              'Itens:\n'
-              '\n'
-              'Valor:\n'
-              '\n'
-              'Entregar até :',
+          '\n'
+          'Peso:\n'
+          '\n'
+          'Itens:\n'
+          '\n'
+          'Valor:\n'
+          '\n'
+          'Entregar até :',
         ),
         actions: <Widget>[
           TextButton(
-            style: TextButton.styleFrom(textStyle: Theme.of(context).textTheme.labelLarge),
-            child: const Text('Fechar', style: TextStyle(color: Color(0xFFDD7514)),),
+            style: TextButton.styleFrom(
+              textStyle: Theme.of(context).textTheme.labelLarge,
+            ),
+            child: const Text(
+              'Fechar',
+              style: TextStyle(color: Color(0xFFDD7514)),
+            ),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -672,3 +602,61 @@ class CadVaga extends StatelessWidget {
     );
   }
 }
+
+class ConteudoCabecalhoVagas extends StatelessWidget {
+  const ConteudoCabecalhoVagas({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, top: 18),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SizedBox(
+            width: 164,
+            height: 24,
+            child: Text(
+              'GetTask',
+              style: TextStyle(
+                color: Color(0xFFDD7514),
+                fontSize: 16,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TituloVagas extends StatelessWidget {
+  const TituloVagas({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,
+      child: Stack(
+        children: [
+          Positioned(
+            top: 20,
+            left: (345 / 2) - (100 / 2),
+            child: const Text(
+              'Vagas',
+              style: TextStyle(
+                color: Color(0xFFDD7514),
+                fontSize: 32,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
